@@ -4,23 +4,18 @@ services:
     build: ./navigation-home-frontend
     ports:
       - "3999:3999"
-    # networks ni potreben, če ni medsebojne komunikacije med servisi
 
   carfrontend:
     build: ./carfrontend
     ports:
       - "4000:4000"
-    # Opcija networks tukaj ni potrebna
 
   rentalfrontend:
     build: ./rentalfrontend
     ports:
       - "4001:4001"
-    # Opcija networks tukaj ni potrebna
 
   userfrontend:
-    build: ./userfrontend
-            
+    build: ./userfrontend  
     ports:
       - "4002:4002"
-    # Opcija networks tukaj ni potrebna
