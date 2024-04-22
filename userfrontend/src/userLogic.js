@@ -164,9 +164,10 @@ return (
                                     onChange={(e) => setEditUser({ ...editUser, rentalId: e.target.value })}
                                 />
                             </label>
+                            </form>
                             <button onClick={posodobiSubmit}>Update</button>
                             <button onClick={posodobiPrekini}>Cancel</button>
-                        </form>
+                        
                     </div>
                 )}
             </div>
