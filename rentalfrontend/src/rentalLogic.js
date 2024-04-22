@@ -47,7 +47,6 @@ const RentalLogic = () => {
             .then(response => {
                 console.log("Rental deleted successfully:", response.data);
                 setRentals(rentals.filter(rental => rental.id !== rentalId));
-                window.location.reload();
             })
             .catch(error => console.error("Error deleting rental:", error));
     }
@@ -63,7 +62,6 @@ const RentalLogic = () => {
                 price: '',
                 carId: ''
         });
-        window.location.reload();
       })
       .catch(error => console.error("Error adding rental:", error));
   };
@@ -85,7 +83,6 @@ const RentalLogic = () => {
         setRentals(updatedRentals);
         setIsEditing(false);
         setEditRental(null);
-        window.location.reload();
       })
       .catch(error => console.error("Error updating rental:", error));
   };

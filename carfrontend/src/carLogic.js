@@ -110,7 +110,6 @@ const CarLogic = () => {
           setCars(updatedCars);
           setIsEditing(false);
           setEditCar(null);
-          window.location.reload();
       })
       .catch(error => console.error("Error updating car:", error));
 };
