@@ -1,21 +1,21 @@
 version: '3.8'
 services:
   home-navigation:
-    build: ./navigation-home-frontend
+    image: peter752/navigation-home-frontend
     ports:
       - "3999:3999"
 
   carfrontend:
-    build: ./carfrontend
+    image: peter752/carfrontend
     ports:
       - "4000:4000"
 
   rentalfrontend:
-    build: ./rentalfrontend
+    image: peter752/rentalfrontend
     ports:
       - "4001:4001"
 
   userfrontend:
-    build: ./userfrontend  
+    image: peter752/userfrontend 
     ports:
       - "4002:4002"
