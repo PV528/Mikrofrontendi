@@ -1,0 +1,87 @@
+name: Build and Push Docker Images
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-push-carfrontend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Log in to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
+      - name: Build and push carfrontend Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: ./carfrontend
+          file: ./carfrontend/Dockerfile           
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/carfrontend:latest
+
+  build-and-push-navigation-home-frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Log in to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
+      - name: Build and push navigation-home-frontend Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: ./navigation-home-frontend  
+          file: ./navigation-home-frontend/Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/navigation-home-frontend:latest
+
+  build-and-push-rentalfrontend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Log in to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
+      - name: Build and push rentalfrontend Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: ./rentalfrontend  
+          file: ./rentalfrontend/Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/rentalfrontend:latest
+
+  build-and-push-userfrontend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Log in to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
+      - name: Build and push userfrontend Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: ./userfrontend  
+          file: ./userfrontend/Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/userfrontend:latest
