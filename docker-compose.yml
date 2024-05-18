@@ -4,18 +4,26 @@ services:
     image: peter752/navigation-home-frontend
     ports:
       - "3999:3999"
+    networks:
+      - ita-network
 
   carfrontend:
     image: peter752/carfrontend
     ports:
       - "4000:4000"
+    networks:
+      - ita-network
 
   rentalfrontend:
     image: peter752/rentalfrontend
     ports:
       - "4001:4001"
+    networks:
+      - ita-network
 
   userfrontend:
     image: peter752/userfrontend 
     ports:
       - "4002:4002"
+    networks:
+      - ita-network
