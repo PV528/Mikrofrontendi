@@ -23,7 +23,7 @@ const RentalLogic = () => {
     }, []);
 
     const pridobiNajeme = () => {
-        axios.get('http://localhost:3000/api/rentals')
+        axios.get('http://gatewayWeb:3000/api/rentals')
             .then(response => {
                 console.log(response.data);
                 setRentals(response.data);
@@ -32,7 +32,7 @@ const RentalLogic = () => {
     };
 
     const pridobiNajemPoId = () => {
-        axios.get(`http://localhost:3000/api/rentals/${rentalIdInput}`)
+        axios.get(`http://gatewayWeb:3000/api/rentals/${rentalIdInput}`)
             .then(response => {
                 console.log(response.data);
                 setSelectedRental(response.data);
@@ -43,7 +43,7 @@ const RentalLogic = () => {
     const izbrisiNajem = () => {
     const rentalId = prompt("Enter rental ID to delete:");
     if (rentalId) {
-        axios.delete(`http://localhost:3000/api/rentals/${rentalId}`)
+        axios.delete(`http://gatewayWeb:3000/api/rentals/${rentalId}`)
             .then(response => {
                 console.log("Rental deleted successfully:", response.data);
                 setRentals(rentals.filter(rental => rental.id !== rentalId));
@@ -53,7 +53,7 @@ const RentalLogic = () => {
 };
 
     const dodajNajem = () => {
-        axios.post('http://localhost:3000/api/rentals/create', newRental)
+        axios.post('http://gatewayWeb:3000/api/rentals/create', newRental)
         .then(response => {
             setRentals([...rentals, response.data]);
             setNewRental({
@@ -72,7 +72,7 @@ const RentalLogic = () => {
   };
   
   const submitUpdate = () => {
-    axios.put(`http://localhost:3000/api/rentals/${editRental.id}`, editRental)
+    axios.put(`http://gatewayWeb:3000/api/rentals/${editRental.id}`, editRental)
       .then(response => {
         const updatedRentals = rentals.map(rental => {
           if (rental.id === editRental.id) {

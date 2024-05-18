@@ -1,4 +1,5 @@
 version: '3.8'
+
 services:
   home-navigation:
     image: peter752/navigation-home-frontend
@@ -27,3 +28,7 @@ services:
       - "4002:4002"
     networks:
       - ita-network
+
+networks:
+  ita-network:
+    driver: bridge
