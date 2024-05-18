@@ -12,6 +12,8 @@ services:
     image: peter752/carfrontend
     ports:
       - "4000:4000"
+    depends_on:
+      - gatewayWeb
     networks:
       - ita-network
 
