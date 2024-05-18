@@ -20,7 +20,7 @@ const UserLogic = () => {
     }, []);
 
     const pridobiUporabnike = () => {
-        axios.get('http://gatewayWeb:3000/user/all')
+        axios.get('http://localhost:3000/user/all')
             .then(response => {
                 console.log(response.data);
                 setUsers(response.data);
@@ -28,7 +28,7 @@ const UserLogic = () => {
             .catch(error => console.error("Error fetching cars:", error));
     };
     const pridobiUporabnikaPoId = () => {
-        axios.get(`http://gatewayWeb:3000/user/${idInput}`)
+        axios.get(`http://localhost:3000/user/${idInput}`)
           .then(response => {
               console.log(response.data);
               setSelectedUser(response.data);
@@ -36,7 +36,7 @@ const UserLogic = () => {
           .catch(error => console.error("Error fetching car by register number:", error));
   };
   const dodajUporabnika = () => {
-    axios.post('http://gatewayWeb:3000/user/add', newUser)
+    axios.post('http://localhost:3000/user/add', newUser)
         .then(response => {
             setUsers([...users, response.data]);
             setNewUser({
@@ -49,7 +49,7 @@ const UserLogic = () => {
 };
 
   const izbrisiUporabnika = (id) => {
-    axios.delete(`http://gatewayWeb:3000/user/${id}`)
+    axios.delete(`http://localhost:3000/user/${id}`)
       .then(response => {
         console.log("Car deleted successfully:", response.data);
         setUsers(users.filter(user => user.id !== id));
@@ -63,7 +63,7 @@ const klikPosodobi = (user) => {
 };
 
   const posodobiSubmit = () => {
-    axios.put(`http://gatewayWeb:3000/user/${editUser.id}`, editUser)
+    axios.put(`http://localhost:3000/user/${editUser.id}`, editUser)
     .then(response => {
         // Update corresponding row in the table
         const updatedUsers = users.map(user => {
