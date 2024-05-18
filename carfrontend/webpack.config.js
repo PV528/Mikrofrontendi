@@ -39,9 +39,9 @@ module.exports = {
         "./carLogic": "./src/carLogic"
       },
       remotes: {
-        HomeMicroFrontend: "HomeMicroFrontend@http://home-navigation:3999/remoteEntry.js",
-        RentalMicroFrontend: "RentalMicroFrontend@http://rentalfrontend:4001/remoteEntry.js",
-        UserMicroFrontend: "UserMicroFrontend@http://userfrontend:4002/remoteEntry.js",
+        HomeMicroFrontend: "HomeMicroFrontend@http://localhost:3999/remoteEntry.js",
+        RentalMicroFrontend: "RentalMicroFrontend@http://localhost:4001/remoteEntry.js",
+        UserMicroFrontend: "UserMicroFrontend@http://localhost:4002/remoteEntry.js",
       },
       shared: { react: { singleton: true, eager: true }, "react-dom": { singleton: true, eager: true } },
     })

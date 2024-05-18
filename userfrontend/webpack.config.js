@@ -39,9 +39,9 @@ module.exports = {
         "./userLogic": "./src/userLogic"
       },
       remotes: {
-        HomeMicroFrontend: "HomeMicroFrontend@http://home-navigation:3999/remoteEntry.js",
-        CarFrontend: "CarFrontend@http://carfrontend:4000/remoteEntry.js",
-        RentalFrontend: "RentalFrontend@http://rentalfrontend:4001/remoteEntry.js",
+        HomeMicroFrontend: "HomeMicroFrontend@http://localhost:3999/remoteEntry.js",
+        CarFrontend: "CarFrontend@http://localhost:4000/remoteEntry.js",
+        RentalFrontend: "RentalFrontend@http://localhost:4001/remoteEntry.js",
       },
       shared: { react: { singleton: true, eager: true }, "react-dom": { singleton: true, eager: true } },
     })
