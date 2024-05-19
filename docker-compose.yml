@@ -31,4 +31,4 @@ services:
 
 networks:
   ita-network:
-    driver: bridge
+    external: true
