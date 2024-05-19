@@ -29,7 +29,7 @@ const CarLogic = () => {
     }, []);
 
     const pridobiAvte = () => {
-        axios.get('http://gateway-web:3000/cars/all')
+        axios.get('http://localhost:3000/cars/all')
             .then(response => {
                 console.log(response.data);
                 setCars(response.data);
@@ -38,7 +38,7 @@ const CarLogic = () => {
     };
 
     const dodajAvto = () => {
-      axios.post('http://gateway-web:3000/cars/addCar', newCar)
+      axios.post('http://localhost:3000/cars/addCar', newCar)
           .then(response => {
               setCars([...cars, response.data]);
               setNewCar({
@@ -55,7 +55,7 @@ const CarLogic = () => {
   };
 
     const pridobiAvtoPoId = () => {
-      axios.get(`http://gateway-web:3000/cars/${registerNumberInput}`)
+      axios.get(`http://localhost:3000/cars/${registerNumberInput}`)
         .then(response => {
             console.log(response.data);
             setSelectedCar(response.data);
@@ -64,7 +64,7 @@ const CarLogic = () => {
 };
 
     const pridobiAvtoPoBarvi = () => {
-      axios.get(`http://gateway-web:3000/cars/color/${colorInput}`)
+      axios.get(`http://localhost:3000/cars/color/${colorInput}`)
         .then(response => {
           console.log(response.data);
           setSelectedCars(response.data);
@@ -74,7 +74,7 @@ const CarLogic = () => {
 };
 
     const pridobiAvtoPoZnamki = () => {
-      axios.get(`http://gateway-web:3000/cars/brand/${brandInput}`)
+      axios.get(`http://localhost:3000/cars/brand/${brandInput}`)
         .then(response => {
           console.log(response.data);
           setSelectedCars(response.data);
@@ -84,7 +84,7 @@ const CarLogic = () => {
 };
 
     const izbrisiAvto = (registerNumber) => {
-      axios.delete(`http://gateway-web:3000/cars/${registerNumber}`)
+      axios.delete(`http://localhost:3000/cars/${registerNumber}`)
         .then(response => {
           console.log("Car deleted successfully:", response.data);
           setCars(cars.filter(car => car.registerNumber !== registerNumber));
@@ -98,7 +98,7 @@ const CarLogic = () => {
 };
 
     const posodobiSubmit = () => {
-      axios.put(`http://gateway-web:3000/cars/${editCar.registerNumber}`, editCar)
+      axios.put(`http://localhost:3000/cars/${editCar.registerNumber}`, editCar)
       .then(response => {
           // Update corresponding row in the table
           const updatedCars = cars.map(car => {
