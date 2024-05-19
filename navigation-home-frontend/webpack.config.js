@@ -40,9 +40,9 @@ module.exports = {
         "./home": "./src/home"
       },
       remotes: {
-        CarMicroFrontend: "CarMicroFrontend@http://carfrontend:4000/remoteEntry.js",
-        RentalMicroFrontend: "RentalMicroFrontend@http://rentalfrontend:4001/remoteEntry.js",
-        UserMicroFrontend: "UserMicroFrontend@http://userfrontend:4002/remoteEntry.js",
+        CarMicroFrontend: "CarMicroFrontend@http://localhost:4000/remoteEntry.js",
+        RentalMicroFrontend: "RentalMicroFrontend@http://localhost:4001/remoteEntry.js",
+        UserMicroFrontend: "UserMicroFrontend@http://localhost:4002/remoteEntry.js",
       },
       shared: { react: { singleton: true, eager: true }, "react-dom": { singleton: true, eager: true } },
     })
